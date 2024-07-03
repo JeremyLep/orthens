@@ -70,6 +70,7 @@
         "@popperjs/core": "^2.10.2",
         "@prisma/client": "^5.7.0",
         "apexcharts": "^3.44.2",
+        "aws-cdk-lib": "^2.147.3",
         "bcrypt": "^5.1.1",
         "draftjs-to-html": "^0.9.1",
         "eslint": "^8.49.0",
@@ -89,6 +90,7 @@
         "react-dropzone": "^14.2.3",
         "react-feather": "^2.0.10",
         "sass": "^1.55.0",
+        "sst": "^2.43.3",
         "styled-components": "^6.1.8",
         "swr": "^2.2.5"
     }

@@ -1,16 +1,16 @@
 import { SSTConfig } from 'sst';
-import { Cron, NextjsSite } from 'sst/constructs';
+import { NextjsSite } from 'sst/constructs';
 import * as cdk from 'aws-cdk-lib';
 
-const ROOT_DOMAIN_NAME = 'enchantors.com';
+const ROOT_DOMAIN_NAME = 'orthens.fr';
 const DOMAIN_NAME = `${ROOT_DOMAIN_NAME}`;
 const DOMAIN_NAME_ALIAS = `www.${ROOT_DOMAIN_NAME}`;
 
 export default {
     config(_input) {
         return {
-            name: 'enchantors',
-            region: 'us-east-1',
+            name: 'orthens',
+            region: 'eu-west-1',
         };
     },
     stacks(app) {
@@ -35,7 +35,7 @@ export default {
                 }
             ) as any;
 
-            const site = new NextjsSite(stack, 'enchantors', {
+            const site = new NextjsSite(stack, 'orthens', {
                 customDomain: {
                     domainName: DOMAIN_NAME,
                     domainAlias: DOMAIN_NAME_ALIAS,
@@ -45,16 +45,6 @@ export default {
                     },
                 },
                 timeout: '60 seconds',
-            });
-
-            new Cron(stack, 'cron_generation', {
-                schedule: 'rate(1 hour)',
-                job: 'pages/api/cron/cron-generation.handler',
-            });
-
-            new Cron(stack, 'cron_email_send', {
-                schedule: 'cron(0 17 * * ? *)',
-                job: 'pages/api/cron/cron-email.handler',
             });
 
             stack.addOutputs({
