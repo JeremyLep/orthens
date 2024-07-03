@@ -10,7 +10,8 @@
     "scripts": {
         "local": "next dev",
         "lint": "next lint",
-        "build": "npx tailwindcss -i ./styles/tailwind-raw.scss -o ./styles/tailwind.css && prisma generate && next build",
+        "build": "npx tailwindcss -i ./styles/tailwind-raw.scss -o ./styles/tailwind.css && prisma generate && prisma migrate deploy && next build",
+        "dev": "sst bind next dev",
         "lint:fix": "next lint --fix",
         "prettier": "prettier . --check",
         "prettier:fix": "prettier --write .",

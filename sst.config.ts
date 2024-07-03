@@ -11,6 +11,7 @@ export default {
         return {
             name: 'orthens',
             region: 'eu-west-1',
+            profile: 'orthens',
         };
     },
     stacks(app) {
