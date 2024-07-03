@@ -1,0 +1,56 @@
+version: "3"
+services:
+  orthens-postgres:
+    container_name: orthens-postgres
+    image: postgres:15
+    environment:
+      POSTGRES_DB: orthens
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "3301:5432"
+    networks:
+      - orthens-net
+
+  orthens-prisma:
+    container_name: orthens-prisma
+    image: timothyjmiller/prisma-studio:latest
+    restart: unless-stopped
+    networks:
+      - orthens-net
+    env_file:
+      - ../.env
+    ports:
+      - 5557:5555
+    depends_on:
+      - orthens-postgres
+
+  orthens-app:
+    container_name: orthens-app
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - orthens-net
+    build:
+      context: ..
+      dockerfile: ./.local/Dockerfile
+    ports:
+      - "6060:3000"
+    volumes:
+      - ../.:/src/app
+      - ../node_modules:/src/app/node_modules
+      - ../.next:/src/app/.next
+    env_file:
+      - ../.env
+    depends_on:
+      - orthens-postgres
+
+networks:
+  orthens-net:
+    driver: bridge
+
+volumes:
+  postgres-data:

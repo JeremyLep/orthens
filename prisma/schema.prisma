@@ -1,0 +1,208 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-arm64-openssl-1.0.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model Account {
+  id                 Int     @id @default(autoincrement())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id                   String                @id @default(uuid())
+  name                 String?
+  email                String?               @unique
+  emailVerified        DateTime?             @map("email_stringverified")
+  password             String?
+  image                String?
+  profession           String?
+  address              String?
+  phone                String?
+  postcode             String?
+  city                 String?
+  institution          String?
+  isPhonePublic        Boolean               @default(false) @map("is_phone_public")
+  isAddressPublic      Boolean               @default(false) @map("is_address_public")
+  createdAt            DateTime              @default(now()) @map("created_at")
+  updatedAt            DateTime              @updatedAt @map("updated_at")
+  active               Boolean               @default(true)
+  role                 String                @default("USER")
+  accounts             Account[]
+  sessions             Session[]
+  childrenCreated      Child[]
+  relations            Relation[]
+  invitations          Invitation[]
+  followUpMessages     FollowUpMessage[]
+  conversationMessages ConversationMessage[]
+  files                File[]
+  alerts               Alert[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Child {
+  id          String     @id @default(uuid())
+  firstname   String
+  lastname    String
+  birthYear   Int
+  institution String?
+  archived    Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  createdBy   User       @relation(fields: [createdById], references: [id], onDelete: Cascade)
+  createdById String     @map("created_by_id")
+  relations   Relation[]
+
+  @@map("children")
+}
+
+model Relation {
+  id               String            @id @default(uuid())
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  child            Child             @relation(fields: [childId], references: [id], onDelete: Cascade)
+  childId          String            @map("child_id")
+  archived         Boolean           @default(false)
+  conversation     Conversation?
+  users            User[]
+  invitations      Invitation[]
+  followUpMessages FollowUpMessage[]
+  files            File[]
+
+  @@map("relations")
+}
+
+model Invitation {
+  id          String   @id @default(uuid())
+  email       String
+  profession  String?
+  institution String?
+  status      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastRetry   DateTime @default(now())
+  invitationCount Int  @default(1)
+  invitedBy   User     @relation(fields: [invitedById], references: [id])
+  invitedById String   @map("invited_by_id")
+  relation    Relation @relation(fields: [relationId], references: [id], onDelete: Cascade)
+  relationId  String   @map("relation_id")
+
+  @@map("invitations")
+}
+
+model FollowUpMessage {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  date        DateTime
+  message     String
+  relation    Relation @relation(fields: [relationId], references: [id], onDelete: Cascade)
+  relationId  String   @map("relation_id")
+  createdBy   User     @relation(fields: [createdById], references: [id])
+  createdById String   @map("created_by_id")
+  files       File[]
+
+  @@map("follow_up_messages")
+}
+
+model Conversation {
+  id         String                @id @default(uuid())
+  createdAt  DateTime              @default(now())
+  relation   Relation              @relation(fields: [relationId], references: [id], onDelete: Cascade)
+  relationId String                @unique @map("relation_id")
+  messages   ConversationMessage[]
+
+  @@map("conversations")
+}
+
+model ConversationMessage {
+  id             String       @id @default(uuid())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  message        String
+  createdBy      User         @relation(fields: [createdById], references: [id])
+  createdById    String       @map("created_by_id")
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  conversationId String       @map("conversation_id")
+  files          File[]
+
+  @@map("conversation_messages")
+}
+
+model File {
+  id                    String               @id @default(uuid())
+  name                  String
+  size                  Int
+  extension             String
+  url                   String
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+  createdBy             User                 @relation(fields: [createdById], references: [id])
+  createdById           String               @map("created_by_id")
+  followUpMessage       FollowUpMessage?     @relation(fields: [followUpMessageId], references: [id])
+  followUpMessageId     String?              @map("follow_up_message_id")
+  relation              Relation?            @relation(fields: [relationId], references: [id])
+  relationId            String?              @map("relation_id")
+  conversationMessage   ConversationMessage? @relation(fields: [conversationMessageId], references: [id])
+  conversationMessageId String?              @map("conversation_message_id")
+
+  @@map("files")
+}
+
+model Alert {
+  id        Int      @id @default(autoincrement())
+  type      String
+  title     String
+  active    Boolean  @default(true)
+  seen      Boolean  @default(false)
+  message   String
+  link      String?
+  linkText  String?  @map("link_text")
+  image     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("alerts")
+}

@@ -1,0 +1,83 @@
+@import 'tailwind.css';
+
+// Fonts
+@import 'components/fonts/roboto';
+
+// Breakpoint
+@import 'components/breakpoint';
+
+// 3rd Parties
+// @import 'components/~slick-carousel/slick/slick';
+// @import 'components/~slick-carousel/slick/slick-theme';
+// @import 'components/~highlight.js/scss/github';
+// @import 'components/~tooltipster/dist/css/tooltipster.bundle.min';
+// @import 'components/~tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min';
+// @import 'components/~tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min';
+// @import 'components/~daterangepicker/daterangepicker';
+// @import 'components/~select2/src/scss/core';
+// @import 'components/~dropzone/dist/dropzone';
+// @import 'components/~jquery-toast-plugin/src/jquery.toast';
+
+// Animations
+@import 'components/typing-dots';
+@import 'components/zoom-in';
+@import 'components/intro';
+
+// Components
+@import 'components/top-bar';
+@import 'components/app';
+@import 'components/login';
+@import 'components/mini-chat-box';
+@import 'components/mini-chat-list';
+@import 'components/mini-chat';
+@import 'components/table';
+@import 'components/table-report';
+@import 'components/report-timeline';
+@import 'components/report-chart';
+@import 'components/search';
+@import 'components/input';
+@import 'components/button';
+@import 'components/notification';
+@import 'components/image-fit';
+@import 'components/box';
+@import 'components/report-box';
+@import 'components/global';
+@import 'components/content';
+@import 'components/top-nav';
+@import 'components/side-nav';
+@import 'components/breadcrumb';
+@import 'components/tailwind';
+@import 'components/top-bar-boxed';
+@import 'components/mobile-menu';
+@import 'components/pagination';
+@import 'components/dropdown';
+@import 'components/modal';
+@import 'components/tab';
+@import 'components/checkbox';
+@import 'components/file';
+@import 'components/inbox-filter';
+@import 'components/inbox';
+@import 'components/scrollbar';
+@import 'components/chat';
+@import 'components/boxed-tabs';
+@import 'components/chat-dropdown';
+@import 'components/wizard';
+@import 'components/blog';
+@import 'components/news';
+@import 'components/pricing-tabs';
+@import 'components/accordion';
+@import 'components/error-page';
+@import 'components/tooltip';
+@import 'components/datatable-wrapper';
+@import 'components/datepicker';
+@import 'components/select2';
+@import 'components/slick';
+@import 'components/slick';
+@import 'components/search-result';
+@import 'components/mini-report-chart';
+@import 'components/notification-content';
+@import 'components/report-maps';
+@import 'components/pos-dropdown';
+@import 'components/pos';
+@import 'components/toast';
+@import 'components/post';

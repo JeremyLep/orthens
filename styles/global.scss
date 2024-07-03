@@ -1,0 +1,97 @@
+.text-primary {
+    color: #25b6be;
+}
+
+.text-theme-1 {
+    color: #25b6be!important;
+}
+
+.bg-theme-1 {
+    background-color: #25b6be!important;
+}
+
+.hover\:bg-theme-1:hover {
+    background-color: #25b6be!important;
+}
+
+.border-theme-1 {
+    border-color: #25b6be!important;
+}
+
+.thumb-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3%;
+}
+
+.thumb {
+    position: relative;
+    display: inline-flex;
+    border-radius: 2px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    width: 23%;
+    height: auto;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.thumb-button {
+    font-weight: 500;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    border: none;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropzone {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: #eeeeee;
+    border-style: dashed;
+    background-color: #fafafa;
+    color: #bdbdbd;
+    outline: none;
+    transition: border 0.24s ease-in-out;
+}
+
+.badge-danger {
+    box-shadow: 0 0 0 1px #fff, inset 0 0 0 1px rgba(239,68,68,.1), 0 0 transparent;
+    color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.wrapper-text-editor {
+    border: 1px solid #eaeaea;
+}
+
+.error-message {
+    padding-top: 3px;
+    color: #dc3545;
+}
+
+.bg-primary-light {
+    background-color: #a0e4e7;
+}
+
+.public-DraftEditor-content .public-DraftStyleDefault-block {
+    margin: 0!important;
+}
+
+.alert-container {
+    max-height: 300px;
+    overflow-y: auto;
+}

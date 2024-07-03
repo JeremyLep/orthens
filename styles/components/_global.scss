@@ -1,0 +1,16 @@
+html {
+    background: #25b6be;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    @apply overflow-x-hidden font-roboto text-sm text-gray-800;
+    @media (max-width: $sm) {
+        @apply px-3;
+    }
+}
+body:not(:has(.login)) {
+    @media (min-width: $sm) {
+        @apply px-8;
+    }
+    @apply py-3 px-1;
+}
