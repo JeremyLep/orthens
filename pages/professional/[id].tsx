@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ConversationContent } from "components/Conversation/ConversationContent";
 import { ConversationDefault } from "components/Conversation/ConversationDefault";
 import { ConversationSideMenu } from "components/Conversation/ConversationSideMenu";
@@ -33,6 +34,7 @@ export default function StudentProfile({ user, professional}) {
             default:
                 break;
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTab]);
 
     return (
@@ -48,7 +50,7 @@ export default function StudentProfile({ user, professional}) {
                     <div className="flex flex-col lg:flex-row border-b border-gray-200 pb-5 -mx-5">
                         <div className="flex flex-1 px-5 items-center justify-center lg:justify-start">
                             <div className="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
-                                <img height={30} width={30} className="rounded-full" src={professional.image ?? `https://ui-avatars.com/api/?name=${professional.name}&format=svg&rounded=true`}/>
+                                <img alt="" height={30} width={30} className="rounded-full" src={professional.image ?? `https://ui-avatars.com/api/?name=${professional.name}&format=svg&rounded=true`}/>
                             </div>
                             <div className="ml-5">
                                 <div className="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">{professional.name ?? professional.email}</div>

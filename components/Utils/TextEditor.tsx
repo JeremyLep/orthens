@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { convertFromHTML } from 'draft-js'
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const Editor = dynamic(
@@ -9,13 +8,17 @@ const Editor = dynamic(
 
 
 const TextEditor = ({onChange}) => {
+  const props = {
+    toolbarClassName: "toolbar-text-editor",
+    wrapperClassName: "wrapper-text-editor",
+    editorClassName: "text-editor p-2 pl-3",
+  } as any;
+
   return (
     <>
       <div className="container my-5">
         <Editor
-          toolbarClassName="toolbar-text-editor"
-          wrapperClassName="wrapper-text-editor"
-          editorClassName="text-editor p-2 pl-3"
+          {...props}
           onChange={onChange}
         />
       </div>
