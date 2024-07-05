@@ -1,19 +1,15 @@
 import 'apexcharts/dist/apexcharts.css';
 import { GetServerSideProps } from 'next';
-import { getServerSession } from 'next-auth';
-import { authOptions } from './api/auth/[...nextauth]';
-import Hero from 'components/Landing/Hero';
 
 export default function Home({ user }) {
-    return <>
-        <Hero />
-    </>;
+    return <></>;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-    const session = await getServerSession(req, res, authOptions);
+    res.writeHead(302, { Location: '/dashboard' });
+    res.end();
 
     return {
-        props: { user: session?.user ?? null },
+        props: { user: null },
     };
 }
