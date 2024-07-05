@@ -18,7 +18,7 @@ export default function ResetRequestPassword() {
     return (
         <>
             <SeoHead title="OrthEns - Renouvellement de mot de passe" />
-            <div className="login">
+            <div className="login xl:block contents">
                 <div className="container sm:px-10">
                     <div className="block xl:grid grid-cols-2 gap-4">
                         <div className="hidden xl:flex flex-col min-h-screen">
@@ -44,7 +44,7 @@ export default function ResetRequestPassword() {
                                     </div>
                                     <button
                                         onClick={onSubmit}
-                                        className="button w-auto text-white bg-theme-1 xl:mt-5">
+                                        className="button w-auto text-white bg-theme-1 mt-5">
                                         Recevoir un lien de réinitialisation
                                     </button>
                                 </div>

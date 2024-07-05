@@ -40,7 +40,7 @@ export default function ResetPasswordToken({ userId }) {
     return (
         <>
             <SeoHead title="OrthEns - Renouvellement de mot de passe" />
-            <div className="login">
+            <div className="login xl:block contents">
                 <div className="container sm:px-10">
                     <div className="block xl:grid grid-cols-2 gap-4">
                         <div className="hidden xl:flex flex-col min-h-screen">
@@ -87,7 +87,7 @@ export default function ResetPasswordToken({ userId }) {
                                         </div>
                                         <button
                                             type="submit"
-                                            className="button w-full xl:w-32 text-white bg-theme-1 xl:mt-5">
+                                            className="button w-full xl:w-32 text-white bg-theme-1 mt-5">
                                             Renouveller
                                         </button>
                                     </div>

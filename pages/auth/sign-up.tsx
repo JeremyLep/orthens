@@ -88,7 +88,7 @@ export default function SignUp({
     return (
         <>
             <SeoHead title="OrthEns - Inscription" />
-            <div className="login">
+            <div className="login xl:block contents">
                 <div className="container sm:px-10">
                     <div className="block xl:grid grid-cols-2 gap-4">
                         <div className="hidden xl:flex flex-col min-h-screen">
@@ -190,7 +190,7 @@ export default function SignUp({
                                     />
                                     <div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                                         <button disabled={lock} type='submit' className="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">S'inscrire</button>
-                                        <Link href={'/auth/sign-in'} className="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Se connecter</Link>
+                                        <Link href={'/auth/sign-in'} className="block sm:inline-block button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Se connecter</Link>
                                     </div>
                                 </form>
                                 <hr className="my-4 mx-auto pb-5" />
