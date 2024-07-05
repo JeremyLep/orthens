@@ -33,13 +33,13 @@ export default {
                         cdk.aws_certificatemanager.CertificateValidation.fromDns(
                             hostedZone
                         ),
-                }
+                },
             ) as any;
 
             const site = new NextjsSite(stack, 'orthens', {
                 customDomain: {
                     domainName: DOMAIN_NAME,
-                    domainAlias: DOMAIN_NAME_ALIAS,
+                    //domainAlias: DOMAIN_NAME_ALIAS,
                     cdk: {
                         hostedZone,
                         certificate,
