@@ -10,7 +10,7 @@ export default {
     config(_input) {
         return {
             name: 'orthens',
-            region: 'eu-west-1',
+            region: 'us-east-1',
             profile: 'orthens',
         };
     },
