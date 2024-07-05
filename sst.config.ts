@@ -16,25 +16,14 @@ export default {
     },
     stacks(app) {
         app.stack(function Site({ stack }: any) {
-            let hostedZone: any;
             
-            hostedZone = cdk.aws_route53.HostedZone.fromLookup(
+            const hostedZone = new cdk.aws_route53.HostedZone(
                 stack,
-                'ExistingHostedZone',
+                'HostedZone',
                 {
-                    domainName: ROOT_DOMAIN_NAME,
+                    zoneName: ROOT_DOMAIN_NAME,
                 }
-            );
-
-            if (!hostedZone?.hostedZoneId) {
-                hostedZone = new cdk.aws_route53.HostedZone(
-                    stack,
-                    'HostedZone',
-                    {
-                        zoneName: ROOT_DOMAIN_NAME,
-                    }
-                );
-            }
+            ) as any;
 
             const certificate = new cdk.aws_certificatemanager.Certificate(
                 stack,
