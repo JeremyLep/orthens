@@ -20,7 +20,7 @@
         "build:styles": "npx tailwindcss build ./styles/tailwind-raw.scss -o ./styles/tailwind.css"
     },
     "devDependencies": {
-        "@types/bcrypt": "^5.0.2",
+        "@types/bcryptjs": "^2.4.6",
         "@types/draftjs-to-html": "^0.8.4",
         "@types/jsonwebtoken": "^9.0.6",
         "@types/node": "^20.10.4",
@@ -44,7 +44,7 @@
         "autoprefixer": "^10.4.16",
         "aws-cdk-lib": "^2.147.3",
         "axios": "^1.1.3",
-        "bcrypt": "^5.1.1",
+        "bcryptjs": "^2.4.3",
         "core-js": "^3.35.0",
         "css-loader": "^6.4.0",
         "css-minimizer-webpack-plugin": "^3.1.1",
