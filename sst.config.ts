@@ -40,12 +40,13 @@ export default {
             const site = new NextjsSite(stack, 'orthens', {
                 customDomain: {
                     domainName: DOMAIN_NAME,
-                    //domainAlias: DOMAIN_NAME_ALIAS,
+                    domainAlias: DOMAIN_NAME_ALIAS,
                     cdk: {
                         hostedZone,
                         certificate,
                     },
                 },
+                edge: true,
                 timeout: '60 seconds',
             });
 
