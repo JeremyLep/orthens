@@ -322,7 +322,7 @@ export default function Account({ initProfile }) {
                     <div className={`modal ${suppressAccountModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-xl mt-5">Êtes vous sur de vouloir supprimer votre compte d'OrthEns ?</div>
+                                <div className="text-xl mt-5">Êtes-vous sûr(e) de vouloir supprimer votre compte d'OrthEns ?</div>
                                 <div className="text-gray-600 mt-2">Une fois supprimé, vous perdrez toutes les données relatives à votre compte. Cette action est irréversible</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 

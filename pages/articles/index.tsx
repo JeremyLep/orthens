@@ -7,11 +7,11 @@ import Link from 'next/link';
 export default function Dashboard({ user }) {
     return (
         <>
-            <SeoHead title="OrthEns - Articles" />
-            <Layout title={'Articles'}>
+            <SeoHead title="OrthEns - Ressources" />
+            <Layout title={'Ressources'}>
                 <div className="intro-y flex flex-col sm:flex-row items-center mt-8">
                     <h2 className="text-lg font-medium mr-auto">
-                        Articles
+                        Ressources
                     </h2>
                 </div>
                 <div className="intro-y grid grid-cols-12 gap-6 mt-5">

@@ -182,14 +182,14 @@ export const NewStudentsStep2 = ({changeStep, professionalFields, professionalIn
     return (
         <>
             <div className="px-5 mt-10">
-                <div className="font-medium text-center text-lg">Inviter des professionels</div>
-                <div className="text-gray-600 text-center mt-2">Inviter des professionels dans le groupe de discussion lié à ce patient</div>
+                <div className="font-medium text-center text-lg">Inviter des professionnels</div>
+                <div className="text-gray-600 text-center mt-2">Inviter des professionnels dans le groupe de discussion lié à ce patient</div>
             </div>
             <div className="px-5 sm:px-20 mt-10 pt-10 border-t border-gray-200">
-                {/* <div className="font-medium text-base">Choisissez des professionels</div>
+                {/* <div className="font-medium text-base">Choisissez des professionnels</div>
                 <div className="grid grid-cols-12 gap-4 row-gap-5 mt-5 mb-10">
                     <div className="intro-y col-span-12 sm:col-span-6">
-                        <div className="mb-2">Liste de professionels existants sur OrthEns</div>
+                        <div className="mb-2">Liste de professionnels existants sur OrthEns</div>
                         <select className="input w-full border flex-1">
                             <option>Choisir</option>
                             <option>Aucun</option>
@@ -197,10 +197,10 @@ export const NewStudentsStep2 = ({changeStep, professionalFields, professionalIn
                         </select>
                     </div>
                 </div> */}
-                <div className="font-medium text-base">Invitez de nouveaux professionels</div>
+                <div className="font-medium text-base">Invitez de nouveaux professionnels</div>
                 <div className="grid grid-cols-12 gap-4 row-gap-5 mt-5">
                     <div className="intro-y col-span-12">
-                        <div className="mb-2">Liste d'email de professionels à inviter sur OrthEns</div>
+                        <div className="mb-2">Liste d'email de professionnels à inviter sur OrthEns</div>
                     </div>
                 </div>
                 {professionalFields.map((professional, index) => {
@@ -261,7 +261,7 @@ export const NewStudentsStep3 = ({changeStep, onSubmit, getValues}) => {
                         <span className="font-bold">{getValues('firstname')} {getValues('lastname')}. né en {getValues('birthYear')}</span>
                     </div>
                     <div className="intro-y col-span-12 sm:col-span-12">
-                        <div className="mb-2">Professionels en charge du patient</div>
+                        <div className="mb-2">Professionnels en charge du patient</div>
                         {getValues('professionals').map((professional, index) => {
                             return (
                                 <div key={index} className="flex items-center justify-between font-bold">

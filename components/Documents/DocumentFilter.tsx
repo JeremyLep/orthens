@@ -68,7 +68,7 @@ export const DocumentFilter = ({setFilteredDocuments, allDocuments}) => {
             <button onClick={() => setFilter('image')} className={`flex w-full items-center px-3 py-2 mt-2 rounded-md ${filter === 'image' ? 'bg-theme-1 text-white font-medium' : ''}`}> <Image className="w-4 h-4 mr-2"/> Images </button>
             <button onClick={() => setFilter('video')} className={`flex w-full items-center px-3 py-2 mt-2 rounded-md ${filter === 'video' ? 'bg-theme-1 text-white font-medium' : ''}`}> <Video className="w-4 h-4 mr-2"/> Audios / Videos </button>
             <button onClick={() => setFilter('document')} className={`flex w-full items-center px-3 py-2 mt-2 rounded-md ${filter === 'document' ? 'bg-theme-1 text-white font-medium' : ''}`}> <File className="w-4 h-4 mr-2"/> Documents </button>
-            <button onClick={() => setFilter('shared')} className={`flex w-full items-center px-3 py-2 mt-2 rounded-md ${filter === 'shared' ? 'bg-theme-1 text-white font-medium' : ''}`}> <Link className="w-4 h-4 mr-2"/> Partagé </button>
+            <button onClick={() => setFilter('shared')} className={`flex w-full items-center px-3 py-2 mt-2 rounded-md ${filter === 'shared' ? 'bg-theme-1 text-white font-medium' : ''}`}> <Link className="w-4 h-4 mr-2"/> Partagés </button>
         </div>
     );
 }

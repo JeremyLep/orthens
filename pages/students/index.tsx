@@ -106,7 +106,7 @@ export default function Students({ user, students }) {
                     <div className={`modal ${suppressModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-3xl mt-5">Êtes vous sur de vouloir archiver le patient {suppressModal.firstname} {suppressModal.lastname}. de OrthEns ?</div>
+                                <div className="text-3xl mt-5">Êtes-vous sûr(e) de vouloir archiver le patient {suppressModal.firstname} {suppressModal.lastname}. de OrthEns ?</div>
                                 <div className="text-gray-600 mt-2">Tous les données relatives au patient seront également archivées. Cette action est définitive.</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 

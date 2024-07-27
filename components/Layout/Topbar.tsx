@@ -38,6 +38,10 @@ const Topbar = ({ title, user }) => {
         };
     }, []);
 
+    const redirect = (url) => {
+        window.location.href = url;
+    }
+
     return (
         <div className="top-bar">
             <div className="-intro-x breadcrumb mr-auto hidden sm:flex">
@@ -65,10 +69,13 @@ const Topbar = ({ title, user }) => {
                                         </div>
                                         <div className="ml-2 overflow-hidden w-full">
                                             <div className="flex items-center">
-                                                <a onClick={() => { }} className="font-medium truncate mr-5">{alert.title}</a>
+                                                <div className="font-medium truncate mr-5">{alert.title}</div>
                                                 <div className="text-xs text-gray-500 ml-auto whitespace-no-wrap">{moment(alert.createdAt).format('DD/MM/YYYY HH:ss')}</div>
                                             </div>
                                             <div className="w-full truncate text-gray-600">{alert.message}</div>
+                                            {alert.link && (
+                                                <a className='w-fit block text-xs button text-white bg-theme-1 shadow-md' href={alert.link}>{alert.linkText ?? 'Voir plus'}</a>
+                                            )}
                                         </div>
                                     </div>
                                 ))}

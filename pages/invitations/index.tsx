@@ -245,7 +245,7 @@ export default function Invitation({ user, invitationsRequested, invitationsReci
                     <div className={`modal ${suppressModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-xl mt-5">Êtes vous sur de vouloir archiver cette invitation pour rejoindre le groupe concernant {suppressModal.relation.child.firstname} {suppressModal.relation.child.lastname}. ?</div>
+                                <div className="text-xl mt-5">Êtes-vous sûr(e) de vouloir archiver cette invitation pour rejoindre le groupe concernant {suppressModal.relation.child.firstname} {suppressModal.relation.child.lastname}. ?</div>
                                 <div className="text-gray-600 mt-2">Une fois archivé, vous ne pourrez plus accepter cette invitation.</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 
@@ -259,7 +259,7 @@ export default function Invitation({ user, invitationsRequested, invitationsReci
                     <div className={`modal ${refuseModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-xl mt-5">Êtes vous sur de vouloir refuser cette invitation pour rejoindre le groupe concernant {refuseModal.relation.child.firstname} {refuseModal.relation.child.lastname}. ?</div>
+                                <div className="text-xl mt-5">Êtes-vous sûr(e) de vouloir refuser cette invitation pour rejoindre le groupe concernant {refuseModal.relation.child.firstname} {refuseModal.relation.child.lastname}. ?</div>
                                 <div className="text-gray-600 mt-2">Une fois refusé, vous ne pourrez plus accepter cette invitation.</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 
@@ -273,7 +273,7 @@ export default function Invitation({ user, invitationsRequested, invitationsReci
                     <div className={`modal ${acceptModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-xl mt-5">Êtes vous sur de vouloir accepter cette invitation pour rejoindre le groupe concernant {acceptModal.relation.child.firstname} {acceptModal.relation.child.lastname}. ?</div>
+                                <div className="text-xl mt-5">Êtes-vous sûr(e) de vouloir accepter cette invitation pour rejoindre le groupe concernant {acceptModal.relation.child.firstname} {acceptModal.relation.child.lastname}. ?</div>
                                 <div className="text-gray-600 mt-2">Une fois accepté, vous pourrez communiquer avec les membres du groupe.</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 
@@ -287,7 +287,7 @@ export default function Invitation({ user, invitationsRequested, invitationsReci
                     <div className={`modal ${retryModal && 'show'}`}>
                         <div className="modal__content modal__content--lg">
                             <div className="p-5 text-center"> <i data-feather="x-circle" className="w-16 h-16 text-theme-6 mx-auto mt-3"></i>
-                                <div className="text-xl mt-5">Êtes vous sur de vouloir relancer {retryModal.email} pour rejoindre le groupe concernant {retryModal.relation.child.firstname} {retryModal.relation.child.lastname}. ?</div>
+                                <div className="text-xl mt-5">Êtes-vous sûr(e) de vouloir relancer {retryModal.email} pour rejoindre le groupe concernant {retryModal.relation.child.firstname} {retryModal.relation.child.lastname}. ?</div>
                                 <div className="text-gray-600 mt-2">Un nouvel email d'invitation sera envoyé à l'adresse email {retryModal.email}.</div>
                             </div>
                             <div className="px-5 pb-8 text-center"> 

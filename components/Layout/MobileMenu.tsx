@@ -59,7 +59,7 @@ const MobileMenu = ({user}) => {
                     <li>
                         <Link href="/articles" className={`side-menu flex mb-3 ${pathname.includes('/articles') ? 'side-menu--active' : ''}`}>
                             <div className="side-menu__icon"> <FileText/> </div>
-                            <div className="side-menu__title ml-2"> Articles </div>
+                            <div className="side-menu__title ml-2"> Ressources </div>
                         </Link>
                     </li>
                     <li>

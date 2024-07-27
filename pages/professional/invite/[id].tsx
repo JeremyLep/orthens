@@ -78,7 +78,7 @@ export default function InviteProfessional({ user, relation }) {
             <Layout title={'Patients'}>
             <div className="flex items-center mt-8">
                     <h2 className="intro-y text-lg font-medium mr-auto">
-                        Inviter un professionel
+                        Inviter un professionnel
                     </h2>
                 </div>
                 <div className="intro-y box py-10 sm:py-20 mt-5">
@@ -112,14 +112,14 @@ export const InviteProfessionalStep1 = ({register, student, invitationsField, in
     return (
         <>
             <div className="px-5 mt-10">
-                <div className="font-medium text-center text-lg">Inviter des professionels dans le groupe de {student.firstname} {student.lastname}.</div>
-                <div className="text-gray-600 text-center mt-2">Inviter des professionels dans le groupe de discussion lié à ce patient</div>
+                <div className="font-medium text-center text-lg">Inviter des professionnels dans le groupe de {student.firstname} {student.lastname}.</div>
+                <div className="text-gray-600 text-center mt-2">Inviter des professionnels dans le groupe de discussion lié à ce patient</div>
             </div>
             <div className="px-5 sm:px-20 mt-10 pt-10 border-t border-gray-200">
-                {/* <div className="font-medium text-base">Choisissez des professionels</div>
+                {/* <div className="font-medium text-base">Choisissez des professionnels</div>
                 <div className="grid grid-cols-12 gap-4 row-gap-5 mt-5 mb-10">
                     <div className="intro-y col-span-12 sm:col-span-6">
-                        <div className="mb-2">Liste de professionels existants sur OrthEns</div>
+                        <div className="mb-2">Liste de professionnels existants sur OrthEns</div>
                         <select className="input w-full border flex-1">
                             <option>Choisir</option>
                             <option>Aucun</option>
@@ -127,7 +127,7 @@ export const InviteProfessionalStep1 = ({register, student, invitationsField, in
                         </select>
                     </div>
                 </div> */}
-                <div className="font-medium text-base">Invitez de nouveaux professionels</div>
+                <div className="font-medium text-base">Invitez de nouveaux professionnels</div>
                 {invitationsField.map((professional, index) => {
                     return (
                         <div className='grid grid-cols-12 gap-4 row-gap-5 mt-5' key={professional.id}>
@@ -188,7 +188,7 @@ export const InviteProfessionalStep2 = ({changeStep, getValues, onSubmit, studen
             <div className="px-5 sm:px-20 mt-10 pt-10 border-t border-gray-200">
                 <div className="grid grid-cols-12 gap-4 row-gap-5 mt-5">
                     <div className="intro-y col-span-12 sm:col-span-12">
-                        <div className="mb-2">Professionels en charge du patient à inviter pour {`${student.firstname} ${student.lastname}.`}</div>
+                        <div className="mb-2">Professionnels en charge du patient à inviter pour {`${student.firstname} ${student.lastname}.`}</div>
                         {getValues('invitations').map((invitation, index) => {
                             return (
                                 <div key={index} className="flex items-center justify-between font-bold">

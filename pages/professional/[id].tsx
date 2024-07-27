@@ -43,7 +43,7 @@ export default function StudentProfile({ user, professional}) {
             <Layout title={'Patients'}>
                 <div className="intro-y flex items-center mt-8">
                     <h2 className="text-lg font-medium mr-auto">
-                        Professionel
+                        Professionnel
                     </h2>
                 </div>
                 <div className="intro-y box px-5 pt-5 mt-5">
@@ -71,7 +71,7 @@ export default function StudentProfile({ user, professional}) {
                     </div>
                     <div className="nav-tabs flex flex-col sm:flex-row justify-center lg:justify-start">
                         {/* <div onClick={() => setActiveTab('suivi')} className={`cursor-pointer py-4 sm:mr-8 flex items-center ${activeTab === 'suivi' ? 'active' : ''}`}> <List className="w-4 h-4 mr-2"/> Suivi en commun </div> */}
-                        <div onClick={() => setActiveTab('conversation')} className={`cursor-pointer py-4 sm:mr-8 flex items-center ${activeTab === 'conversation' ? 'active' : ''}`}> <MessageSquare className="w-4 h-4 mr-2"/> Conversation en commun </div>
+                        <div onClick={() => setActiveTab('conversation')} className={`cursor-pointer py-4 sm:mr-8 flex items-center ${activeTab === 'conversation' ? 'active' : ''}`}> <MessageSquare className="w-4 h-4 mr-2"/> Conversations en commun </div>
                         <div onClick={() => setActiveTab('document')} className={`cursor-pointer py-4 sm:mr-8 flex items-center ${activeTab === 'document' ? 'active' : ''}`}> <HardDrive className="w-4 h-4 mr-2"/> Documents partagés </div>
                     </div>
                 </div>

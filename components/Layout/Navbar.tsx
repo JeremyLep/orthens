@@ -54,7 +54,7 @@ const Navbar = ({user}) => {
                 <li>
                     <Link href="/articles" className={`side-menu ${pathname.includes('/articles') ? 'side-menu--active' : ''}`}>
                         <div className="side-menu__icon"> <FileText/> </div>
-                        <div className="side-menu__title"> Articles </div>
+                        <div className="side-menu__title"> Ressources </div>
                     </Link>
                 </li>
                 <li>

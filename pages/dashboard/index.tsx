@@ -19,15 +19,15 @@ export default function Dashboard() {
                         <div className="grid grid-cols-12 gap-5 mt-5">
                             <Link href={'/conversations'} className="col-span-12 sm:col-span-6 xxl:col-span-6 box p-5 cursor-pointer zoom-in">
                                 <div className="font-medium text-base">Mes conversations</div>
-                                <div className="text-gray-600 pt-3">Retrouvez toutes vos conversations avec les enseignants concernant vos patients</div>
+                                <div className="text-gray-600 pt-3">Retrouvez toutes vos conversations avec les enseignants/orthophonistes</div>
                             </Link>
                             <Link href={'/relations'} className="col-span-12 sm:col-span-6 xxl:col-span-6 box p-5 cursor-pointer zoom-in">
                                 <div className="font-medium text-base">Mes contacts</div>
-                                <div className="text-gray-600 pt-3">Retrouvez toutes vos relations avec les enseignants au sujet d'un patient créé sur la plateforme</div>
+                                <div className="text-gray-600 pt-3">Retrouvez tous vos contacts au sujet d’un patient créé sur la plateforme</div>
                             </Link>
                             <Link href={'/students/new'} className="col-span-12 sm:col-span-6 xxl:col-span-6 box p-5 cursor-pointer zoom-in">
                                 <div className="font-medium text-base">Ajouter un patient sur la plateforme</div>
-                                <div className="text-gray-600 pt-3">Ajoutez un patient sur la plateforme et invitez son enseignant à vous rejoindre !</div>
+                                <div className="text-gray-600 pt-3">Ajoutez un patient sur la plateforme et invitez leurs enseignants/orthophonistes à vous rejoindre !</div>
                             </Link>
                             <Link href={'/documents'} className="col-span-12 sm:col-span-6 xxl:col-span-6 box p-5 cursor-pointer zoom-in">
                                 <div className="font-medium text-base">Mes documents</div>
@@ -35,7 +35,7 @@ export default function Dashboard() {
                             </Link>
                             <Link href={'/account'} className="col-span-12 sm:col-span-6 xxl:col-span-6 box p-5 cursor-pointer zoom-in">
                                 <div className="font-medium text-base">Mon compte</div>
-                                <div className="text-gray-600 pt-3">Configurez votre compte pour changer votre mot de passe ou votre profil</div>
+                                <div className="text-gray-600 pt-3">Configurez votre compte pour modifier votre mot de passe ou votre profil</div>
                             </Link>
                         </div>
                     </div>
