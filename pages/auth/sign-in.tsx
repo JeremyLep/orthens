@@ -116,7 +116,7 @@ export default function SignIn({
                                 <div className="intro-x mt-5 xl:mt-16 text-gray-700 text-center xl:text-left">
                                     En vous connectant vous acceptez nos 
                                     <br/>
-                                    <a className="text-theme-1" href="">Condition d'utilisation</a> & <a className="text-theme-1" href="">Politique de confidentialité</a> 
+                                    <a className="text-theme-1" target='_blank' href="/public/assets/legal/OrthEns-CGU.pdf">Condition d'utilisation</a> & <a className="text-theme-1" href="">Politique de confidentialité</a> 
                                 </div>
                             </div>
                         </div>
