@@ -14,7 +14,7 @@ export default function Dashboard({ user }) {
                     </h2>
                 </div>
                 <div className="intro-y grid grid-cols-12 gap-6 mt-5">
-                    <a target='_blank' href={'/public/assets/articles/ANAE_SPRENGER_148-Final.pdf'} className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box">
+                    <a target='_blank' href={'/assets/articles/ANAE_SPRENGER_148-Final.pdf'} className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box">
                         <div className="flex items-center border-b border-gray-200 px-5 py-4">
                             <div className="ml-3 mr-auto">
                                 <div className="font-medium">La dyslexie</div> 

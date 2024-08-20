@@ -179,7 +179,7 @@ export default function SignUp({
                                     </div>
                                     <div className="intro-x flex items-center text-gray-700 mt-4 text-xs sm:text-sm">
                                         <input {...register('acceptCgu')} type="checkbox" className="input border mr-2" id="accept-cgu"/>
-                                        <label className="cursor-pointer select-none" htmlFor="accept-cgu">J'accepte les<a className="text-theme-1 ml-1" href="/public/assets/legal/OrthEns-CGU.pdf" target='_blank'>conditions d'utilisation</a> d'OthEns.</label>
+                                        <label className="cursor-pointer select-none" htmlFor="accept-cgu">J'accepte les<a className="text-theme-1 ml-1" href="/assets/legal/OrthEns-CGU.pdf" target='_blank'>conditions d'utilisation</a> d'OthEns.</label>
                                     </div>
                                     <ErrorMessage
                                         errors={errors}
