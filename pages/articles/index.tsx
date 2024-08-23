@@ -17,16 +17,12 @@ export default function Dashboard({ user }) {
                     <a target='_blank' href={'/assets/articles/ANAE_SPRENGER_148-Final.pdf'} className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box">
                         <div className="flex items-center border-b border-gray-200 px-5 py-4">
                             <div className="ml-3 mr-auto">
-                                <div className="font-medium">La dyslexie</div> 
-                                <div className="flex text-gray-600 truncate text-xs mt-1"> <a className="text-theme-1 inline-block truncate" href="">Troubles</a> <span className="mx-1">•</span> 5 minutes </div>
+                                <div className="font-medium">L'apprentissage de la lecture</div> 
                             </div>
                         </div>
                         <div className="p-5">
-                            <div className="h-40 xxl:h-56 image-fit">
-                                <img alt="" className="rounded-md" src="dist/images/preview-14.jpg"/>
-                            </div>
-                            <div className="block font-medium text-base mt-5">Desktop publishing software like Aldus PageMaker</div>
-                            <div className="text-gray-700 mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
+                            <div className="block font-medium text-base mt-5">Une progression pédagogique construite à partir de statistiques sur l’orthographe du français (d’après Manulex-Morpho): pour les lecteurs débutants et atypiques</div>
+                            <div className="text-gray-700 mt-2">Cet article de L. Sprenger-Charolles s’adresse aux professionnels en charge de l’apprentissage de la lecture, à leurs formateurs ainsi qu’aux concepteurs de manuels scolaires. Il propose une progression pédagogique pour l’enseignement des correspondances graphèmes-phonèmes construite à partir de la base de données Manulex (Lété, Sprenger-Charolles &amp; Colé, 2004). Cette progression prend en compte la fréquence ainsi que la consistance des correspondances graphèmes-phonèmes dans les mots.</div>
                         </div>
                     </a>
                 </div>
