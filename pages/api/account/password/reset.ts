@@ -33,7 +33,7 @@ export default async function handler(
         }
       });
 
-      return res.status(200).json({ status: 200, email: user.email });
+      return res.status(200).json({ status: 200, email: user.email.toLowerCase() });
     } catch (error) {
       return res.status(500).json({ status: 500, message: error.message });
     }

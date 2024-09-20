@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
             async authorize(credentials, req) {
                 const user = await prisma.user.findFirst({
                     where: {
-                        email: credentials.email,
+                        email: credentials.email.toLowerCase(),
                         active: true
                     }
                 });
@@ -61,7 +61,7 @@ export const authOptions: NextAuthOptions = {
     },
     callbacks: {
         async session({ session, user, token }) {
-            session.user.email = token.email;
+            session.user.email = token.email.toLowerCase();
             session.user.name = token.name;
             session.user.id = token.sub;
             session.user.image = token.picture;

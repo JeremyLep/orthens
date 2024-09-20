@@ -49,10 +49,10 @@ export default function InviteProfessional({ user, relation }) {
         control,
     });
 
-    const onSubmit = (data: Infer<typeof RelationInvitationInput>) => {
+    const onSubmit = () => {
         handleToastPromise(
-            inviteRelation(data),
-            'Ajout du nouveau patient'
+            inviteRelation(getValues()),
+            'Ajout d\'un nouveau professionnel'
         ).finally(() => {
             router.push('/relations');
         });
@@ -183,7 +183,7 @@ export const InviteProfessionalStep2 = ({changeStep, getValues, onSubmit, studen
         <>
             <div className="px-5 mt-10">
                 <div className="font-medium text-center text-lg">Récapitulatif</div>
-                <div className="text-gray-600 text-center mt-2">Vérifier les informations avant d'enregistrer</div>
+                <div className="text-gray-600 text-center mt-2">Vérifier les informations avant d&apos;enregistrer</div>
             </div>
             <div className="px-5 sm:px-20 mt-10 pt-10 border-t border-gray-200">
                 <div className="grid grid-cols-12 gap-4 row-gap-5 mt-5">

@@ -47,13 +47,13 @@ export default async function handler(
 
             const existingUser = await prisma.user.findFirst({
                 where: {
-                    email: invitation.email,
+                    email: invitation.email.toLowerCase(),
                 },
             });
             
             const invitationCreated = await prisma.invitation.create({
                 data: {
-                    email: invitation.email,
+                    email: invitation.email.toLowerCase(),
                     status: invitationStatus.PENDING,
                     profession: invitation.profession,
                     invitedBy: {
@@ -74,11 +74,11 @@ export default async function handler(
 
             await sendMail(
                 {
-                    email: invitation.email,
+                    email: invitation.email.toLowerCase(),
                 },
                 templateEmail.INVITATION_TEMPLATE,
                 {
-                    email: invitation.email,
+                    email: invitation.email.toLowerCase(),
                     profession: invitation.profession,
                     invitedBy: session.user.name,
                     childFirstname: relation.child.firstname,
@@ -96,7 +96,7 @@ export default async function handler(
 
         return res.status(200).json({ status: 200, data: result });
     } catch (error) {
-        console.error('Error inviting user:', error);
+        console.error('Error inviting user:', error.message);
 
         return res.status(500).json({ status: 500, error: error.message });
     }

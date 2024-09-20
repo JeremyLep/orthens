@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Bell, ChevronRight, ToggleRight, User } from 'react-feather';
 import { useEffect, useRef, useState } from 'react';
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 import { fetcher } from 'lib/service/utils/fetcher';
 import moment from 'moment';
+import seeAlert from 'lib/provider/alert/seeAlert';
 
 const Topbar = ({ title, user }) => {
     const [notificationDropdownOpen, setNotificationDropdownOpen] = useState(false);
@@ -13,7 +14,7 @@ const Topbar = ({ title, user }) => {
     const notificationRef = useRef(null);
     const profileRef = useRef(null);
 
-    const { data: alerts = [] } = useSWR(
+    const { data: alerts = [], mutate } = useSWR(
         [`/api/alert/list`],
         ([url]) =>
             fetcher(url).then((response) => {
@@ -29,6 +30,16 @@ const Topbar = ({ title, user }) => {
         if (profileRef.current && !profileRef.current.contains(e.target)) {
             setProfileDropdownOpen(false);
         }
+    };
+
+    const processSeeAlert = (alert) => {
+        if (alert.seen) {
+            return;
+        }
+
+        seeAlert(alert.id).then(() => {
+            mutate(alerts.map((a) => (a.id === alert.id ? { ...a, seen: true } : a)));
+        });
     };
 
     useEffect(() => {
@@ -51,7 +62,7 @@ const Topbar = ({ title, user }) => {
             </div>
             <div ref={notificationRef} className="intro-x dropdown relative mr-auto sm:mr-6">
                 <div
-                    className="dropdown-toggle notification notification--bullet cursor-pointer"
+                    className={`dropdown-toggle notification cursor-pointer ${alerts.filter(a => !a.seen).length > 0 && 'notification--bullet'}`}
                     onClick={() => setNotificationDropdownOpen(!notificationDropdownOpen)}
                 >
                     <Bell className="notification__icon" />
@@ -62,11 +73,7 @@ const Topbar = ({ title, user }) => {
                             <div className="notification-content__title">Notifications</div>
                             <div className='alert-container'>
                                 {alerts.map((alert) => (
-                                    <div key={alert.id} className="cursor-pointer relative flex items-center mb-3">
-                                        <div className="w-12 h-12 flex-none image-fit mr-1">
-                                            <img width={20} height={20} className="rounded-full" src={alert.image} />
-                                            <div className="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
-                                        </div>
+                                    <div key={alert.id} className="cursor-pointer relative flex items-center mb-3" onClick={() => processSeeAlert(alert)}>
                                         <div className="ml-2 overflow-hidden w-full">
                                             <div className="flex items-center">
                                                 <div className="font-medium truncate mr-5">{alert.title}</div>

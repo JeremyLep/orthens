@@ -110,7 +110,7 @@ export default function Account({ initProfile }) {
                         <div className="intro-y box mt-5">
                             <div className="relative flex items-center p-5">
                                 <div className="w-12 h-12 image-fit">
-                                    <Image height={30} width={30}alt="avatar" className="rounded-full" src={profile.image ?? "/assets/images/profile-11.jpg"}/>
+                                    <img width={30} height={30} className="rounded-full" alt="profile" src={profile?.image ?? `https://ui-avatars.com/api/?name=${profile?.name}&format=svg&rounded=true`} />
                                 </div>
                                 <div className="ml-4 mr-auto">
                                     <div className="font-medium text-base">{getValues('name')}</div>
@@ -135,8 +135,8 @@ export default function Account({ initProfile }) {
                                     <div className="grid grid-cols-12 gap-5">
                                         <div className="col-span-12 xl:col-span-4">
                                             <div className="border border-gray-200 rounded-md p-5">
-                                                <div className="w-40 h-40 relative image-fit cursor-pointer zoom-in mx-auto">
-                                                    <Image height={30} width={30}className="rounded-md" alt="" src={profile.image ?? '/assets/images/profile-11.jpg'}/>
+                                                <div className="w-auto h-40 relative image-fit cursor-pointer zoom-in mx-auto">
+                                                    <img width={30} height={30} alt="profile" className='rounded-md' src={profile?.image ?? `https://ui-avatars.com/api/?name=${profile?.name}&format=svg`} />
                                                 </div>
                                                 <div className="w-40 mx-auto cursor-pointer relative mt-5">
                                                     <button type="button" className="button w-full bg-theme-1 text-white cursor-pointer">Changer la photo</button>
@@ -340,6 +340,15 @@ export default function Account({ initProfile }) {
 export const getServerSideProps: GetServerSideProps = withSessionSsr(
     async ({ req, res }) => {
         const profile = await getProfile(req.headers);
+
+        if (!profile) {
+            return {
+                redirect: {
+                    destination: '/auth/sign-in',
+                    permanent: false,
+                },
+            };
+        }
 
         return {
             props: {

@@ -23,7 +23,7 @@ export default async function handler(
 
         const userExist = await prisma.user.findFirst({
             where: {
-                email: input.email as string,
+                email: input.email.toLowerCase() as string,
                 active: true,
             },
         });
@@ -34,7 +34,7 @@ export default async function handler(
 
         const user = await prisma.user.create({
             data: {
-                email: input.email as string,
+                email: input.email.toLowerCase() as string,
                 password: await encodePassword(input.password as string),
                 name: input.name as string,
                 profession: input.profession as string,
@@ -44,13 +44,13 @@ export default async function handler(
 
         await sendMail(
             {
-                email: user.email,
+                email: user.email.toLowerCase(),
                 name: user.name,
             },
             templateEmail.WELCOME_TEMPLATE,
             {
                 name: user.name,
-                email: user.email,
+                email: user.email.toLowerCase(),
             }
         )
 

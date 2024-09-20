@@ -12,7 +12,7 @@ export default async function handler(
         const { email } = req.body;
         const user = await prisma.user.findFirst({
             where: {
-                email: email,
+                email: email.toLowerCase(),
             },
         });
 
@@ -28,7 +28,7 @@ export default async function handler(
 
         await sendMail(
           {
-            email: user.email,
+            email: user.email.toLowerCase(),
             name: user.name,
           },
           templateEmail.RESET_PASSWORD_TEMPLATE,

@@ -13,7 +13,7 @@ export default async function handler(
     try {
         const invitation = await prisma.invitation.findFirst({
             where: {
-                email: session.user.email,
+                email: session.user.email.toLowerCase(),
                 id: req.query.id as string
             },
             include: {

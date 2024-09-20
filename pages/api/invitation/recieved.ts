@@ -12,7 +12,7 @@ export default async function handler(
     try {
         const invitations = await prisma.invitation.findMany({
             where: {
-                email: session.user.email,
+                email: session.user.email.toLowerCase(),
                 status: {
                     not: 'DELETED'
                 }

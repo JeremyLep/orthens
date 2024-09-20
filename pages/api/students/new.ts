@@ -66,7 +66,7 @@ export default async function handler(
         const invitationsCreated = await prisma.invitation.createMany({
             data: studentInput.professionals.map((professional) => {
                 return {
-                    email: professional.email,
+                    email: professional.email.toLowerCase(),
                     relationId: relationCreated.id,
                     profession: professional.profession,
                     invitedById: session.user.id,
@@ -80,11 +80,11 @@ export default async function handler(
 
             await sendMail(
                 {
-                    email: professional.email,
+                    email: professional.email.toLowerCase(),
                 },
                 templateEmail.INVITATION_TEMPLATE,
                 {
-                    email: professional.email,
+                    email: professional.email.toLowerCase(),
                     profession: professional.profession,
                     invitedBy: session.user.name,
                     childFirstname: childCreated.firstname,
@@ -95,7 +95,7 @@ export default async function handler(
 
             const existingUser = await prisma.user.findFirst({
                 where: {
-                    email: professional.email,
+                    email: professional.email.toLowerCase(),
                 },
             });
 

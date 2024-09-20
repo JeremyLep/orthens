@@ -42,11 +42,11 @@ export default async function handler(
 
         await sendMail(
             {
-                email: invitation.email
+                email: invitation.email.toLowerCase()
             },
             templateEmail.RETRY_INVITATION_TEMPLATE,
             {
-                email: invitation.email,
+                email: invitation.email.toLowerCase(),
                 profession: invitation.profession,
                 invitedBy: session.user.name,
                 childFirstname: invitation.relation.child.firstname,
