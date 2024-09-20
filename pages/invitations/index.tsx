@@ -206,12 +206,12 @@ export default function Invitation({ user, invitationsRequested, invitationsReci
                                                         <div className="text-gray-600 text-xs whitespace-no-wrap">{user.profession}</div>
                                                     </div>
                                                 ))}
-                                                {invitation.relation.invitations.filter(i => i.status === invitationStatus.PENDING).map((invitation) => (
+                                                {invitation.status === invitationStatus.PENDING && (
                                                     <div key={invitation.id}>
                                                         <div className="flex text-theme-11"> <Clock className="w-4 h-4 mr-2"/> {invitation.email} </div>
                                                         <div className="text-gray-600 text-xs whitespace-no-wrap">{invitation.profession}</div>
                                                     </div>
-                                                ))}
+                                                )}
                                             </td>
                                             <td className="text-center">{invitation.relation.child.institution}</td>
                                             <td className="text-center">
