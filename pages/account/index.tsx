@@ -114,7 +114,7 @@ export default function Account({ initProfile }) {
                                 </div>
                                 <div className="ml-4 mr-auto">
                                     <div className="font-medium text-base">{getValues('name')}</div>
-                                    <div className="text-gray-600">Orthophoniste</div>
+                                    <div className="text-gray-600">{profile.profession}</div>
                                 </div>
                             </div>
                             <div className="p-5 border-t border-gray-200">
